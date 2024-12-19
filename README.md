@@ -1,6 +1,6 @@
 # COVID-19 and Digital Health Communication on Rheumatoid Arthritis: A Natural Language Processing Analysis of Reddit Discussion
 
-The analysis codes used in this research article are available in the provided repository. Most scripts can be executed using straightforward command-line arguments. Below is a table summarizing the use case for each file:
+The codes used in the research article are available in this repository. Most scripts can be executed using straightforward command-line arguments. Below is a table summarizing the use case for each file:
 | Script    | Use Case |
 | -------- | ------- |
 | analyse_emotion.py | Uses the https://huggingface.co/j-hartmann/emotion-english-distilroberta-base/ model to classify the text into emotions (anger, disgust, fear, joy, neutral, sadness, & surprise) from the input csv files. |

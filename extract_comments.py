@@ -20,7 +20,6 @@ def process_comments_jsonl_to_csv(jsonl_file, csv_file, removed_ids):
             writer.writeheader()
             count = 0
             removed_count = 0
-            removed_count_parent = 0
             for line in tqdm(file):
                 line = line.strip()
                 if line:
@@ -42,7 +41,7 @@ def process_comments_jsonl_to_csv(jsonl_file, csv_file, removed_ids):
                     parent_id = data['parent_id'].split('_')[1] if len(data['parent_id'].split('_')) == 2 else data['parent_id']
                     
                     if parent_id in removed_ids:
-                        removed_count_parent += 1
+                        removed_count += 1
                         continue
 
                     data_dict = {
@@ -63,11 +62,7 @@ def process_comments_jsonl_to_csv(jsonl_file, csv_file, removed_ids):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python script.py <jsonl_file_1> <jsonl_file_2> ... <jsonl_file_n>")
-        sys.exit(1)
-    
-    files = sys.argv[1:]
+    files = [{"posts": "foo.jsonl", "comments": "bar.jsonl"}]
     
     for file in files:
         print(f"Processing {file['comments']} ...")
